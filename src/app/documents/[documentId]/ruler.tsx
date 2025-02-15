@@ -77,7 +77,8 @@ export const Ruler = () => {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-      className={`w-[${PAGE_SIZE}px] mx-auto h-6 border-b border-gray-300 flex items-end relative select-none print:hidden`}
+      className="mx-auto h-6 border-b border-gray-300 flex items-end relative select-none print:hidden"
+      style={{ width: `${PAGE_SIZE}px` }}
     >
       <div
         id="ruler-container"
@@ -99,7 +100,10 @@ export const Ruler = () => {
         />
 
         <div className="absolute inset-x-0 bottom-0 h-full">
-          <div className={`relative h-full w-[${PAGE_SIZE}px]`}>
+          <div
+            className="relative h-full"
+            style={{ width: `${PAGE_SIZE}px` }}
+          >
             {markers.map((marker) => {
               const position  = (marker * PAGE_SIZE)  / 83;
 

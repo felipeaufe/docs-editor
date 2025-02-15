@@ -49,8 +49,8 @@ const Editor = ({ initialContent }: EditorProps) => {
     onCreate: ({ editor }) => setEditor(editor),
     editorProps: {
       attributes: {
-        style: `padding-left: ${leftMargin}px; padding-right: ${rightMargin}px;`,
-        class: `focus:outline-none print:border-0 bg-white border border-[#C7C7C7] flex flex-col min-h-[1054px] w-[${PAGE_SIZE}px] pt-10 pr-14 cursor-text`
+        style: `padding-left: ${leftMargin}px; padding-right: ${rightMargin}px; width: ${PAGE_SIZE}px;`,
+        class: "focus:outline-none print:border-0 bg-white border border-[#C7C7C7] flex flex-col min-h-[1054px] pt-10 pr-14 cursor-text"
       }
     },
     onDestroy() {
@@ -113,7 +113,10 @@ const Editor = ({ initialContent }: EditorProps) => {
   return (
     <div className='size-full overflow-x-auto bg-[#F9FBFD] px-4 print:p-o print:bg-white print:overflow-visible'>
       <Ruler />
-      <div className={`min-w-max flex justify-center w-[${PAGE_SIZE}px] py-4 print:py-0 mx-auto print:w-full print:min-w-0`}>
+      <div
+        className="min-w-max flex justify-center py-4 print:py-0 mx-auto print:w-full print:min-w-0"
+        style={{ width: `${PAGE_SIZE}px` }}
+      >
         <EditorContent editor={editor} />
         <Threads editor={editor} />
       </div>
