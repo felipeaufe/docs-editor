@@ -18,8 +18,6 @@ const DocumentIdPage = async ({ params }: DocumentIdPageProps) => {
 
   const preloadedDocument = await preloadQuery(api.documents.getById, { id: documentId }, { token })
 
-  if(!preloadedDocument) throw new Error("Document not found")
-    
   return <Document preloadedDocument={preloadedDocument} />;
 }
  
