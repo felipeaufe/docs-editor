@@ -23,6 +23,7 @@ export async function getUsers() {
     id: user.id,
     name: user.fullName ?? "Anonymous", // TODO: Change 'Anonymous' for a random name
     avatar: user.imageUrl, // TODO: Change for a random avatar
+    color: ""
   }))
 
   return users
