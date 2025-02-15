@@ -13,6 +13,8 @@ import { getUsers, getDocuments } from "./actions";
 import { ResolveMentionSuggestionsArgs, ResolveUsersArgs } from "@liveblocks/client";
 import { Id } from "@/convex/_generated/dataModel";
 
+import { LEFT_MARGIN_DEFAULT, RIGHT_MARGIN_DEFAULT } from "@/constants/margins"
+
 type User = {
   id: string;
   name: string;
@@ -79,8 +81,8 @@ export function Room({ children }: { children: ReactNode }) {
       <RoomProvider
         id={params.documentId as string}
         initialStorage={{
-          leftMargin: 56,
-          rightMargin: 56
+          leftMargin: LEFT_MARGIN_DEFAULT,
+          rightMargin: RIGHT_MARGIN_DEFAULT
         }}
       >
         <ClientSideSuspense fallback={<FullscreenLoader label="Room loading..." />}>
